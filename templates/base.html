@@ -26,8 +26,7 @@
 </head>
 
 <body id="{% block body_id %}{% endblock %}" class="{% block body_class %}blog{% endblock %}">
-<div id="bleeder"></div>
-
+  <div id="bleeder"></div>
   <div id="pg" class="clearfix">
   {% block body %}
   <div id="hd" class="clearfix">
@@ -36,32 +35,25 @@
       	<span class="first">ricky</span><span class="last">rosario</span>
       </a>
     </div>
-
     <div id="nav">
       {% cache 3600 "base.navbars" %}
       {% navbars %}
       {% endcache %}
-      <form action="/search/" method="GET"><input class="text" type="text" name="q" value="{{ search_term }}"><input type="submit" class="button" value="Search"></form>
-	  
+      <form action="/search/" method="GET"><input class="text" type="text" name="q" value="{{ search_term }}"><input type="submit" class="button" value="search"></form>
     </div>
-    <!-- /nav -->
-
   </div>
-  <!-- /header -->
-
   <div id="bd" class="container_16">
     <div id="main" class="grid_9 suffix_1">
       <div class="content">
             {% block content %}{% endblock %}
       </div>
     </div>
-
     <div id="sd" class="grid_6">
       <ul>
       	<li><a href="{{ BLOG_SETTINGS.rss_url }}" title"Subscribe via RSS">RSS</a></li>
         <li><a href="{{ BLOG_SETTINGS.twitter_url }}" title="Follow me on Twitter">Follow me on Twitter</a></li>
       </ul>
-	  
+
 	  <h4>{% trans "About" %}</h4>
       <p>{{ BLOG_SETTINGS.about }}</p>
 
@@ -125,11 +117,9 @@
 	    </p>
 	  </div>
   </div>
-
-  <!-- google analtyics -->
-  {% cache 7200 "base.analytics" %}
-  {% analytics %}
-  {% endcache %}
-
+<!-- google analtyics -->
+{% cache 7200 "base.analytics" %}
+{% analytics %}
+{% endcache %}
 </body>
 </html>
