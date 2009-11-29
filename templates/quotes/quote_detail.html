@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% load cache i18n tagging_tags tagging_related %}
+
+{% block title %}{{ object.title }} | {{ block.super }}{% endblock %}
+
+{% block content %}
+
+<p>{% trans "Quick fact, my favorite food is" %} {{ favorite_food }}.</p>
+
+<h2>{{ object.title }}</h2>
+
+{% cache 180 "quote.quote_detail" object.pk %}
+<div>
+    <div>
+        {% if object.quote %}
+            <blockquote>{{ object.quote }}</blockquote>
+        {% endif %}
+    </div>
+    <div>
+        {% if object.author %}
+      {% if object.url_source %}
+            <span>- <a href="{{ object.url_source }}">{{ object.author }}</a></span>
+      {% else %}
+      <span>- {{ object.author }} {% if object.circa %}, {{ object.circa }}{% endif %}</span>
+      {% endif %}
+
+       {% endif %}
+    </div>
+
+    {% cache 1800 "quote.quote_detail.tag_list" object.pk %}
+    {% tags_for_object object as tag_list %}
+    {% if tag_list %}
+    <br/>
+    <p class="inline_tag_list"><strong>Tags:</strong>
+    {% for tag in tag_list %}
+    <a href="/tags/{{ tag }}">{{ tag }}</a>{% if not forloop.last %}, {% endif %}
+    {% endfor %}
+    </p>
+    {% endif %}
+  {% endcache %}
+
+  {% cache 1800 "quoteme.quote_detail.related_list" object.pk %}
+  {% tagged_get_related object in quoteme.Quote as quote_list with num=3 %}
+  {% if quote_list %}
+  <div class="related-posts">
+  <p class="inline_tag_list"><strong>Related quotes:</strong></p>
+  <ol>
+  {% for quote in quote_list %}
+  <li><a href="{{ quote.get_absolute_url }}">{{ quote.title }}</a></li>
+  {% endfor %}
+  </ol>
+  </div>
+  {% endif %}
+  {% endcache %}
+
+</div>
+{% endcache %}
+
+{% include "blog/includes/comments.html" %}
+
+{% endblock %}

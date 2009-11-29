@@ -1,0 +1,97 @@
+/***********************************************
+ * base styles
+ */
+body { background: #fff; color: #000; font-family: "Helvetica Neue", Arial, Helvetica, sans-serif; font-size:16px; height: 100%; line-height: 1.4em; width: 100%; }
+
+h1, h2, h3, h4, h5 { color:#000; font-family:Georgia; }
+h1{ font-size: 32px; }
+h2, h3, h4, h5 { margin: 1em 0 0.2em; font-weight: bold; }
+h2 { margin: 0.25em 0 .2em; font-size: 1.8em; letter-spacing: -0.025em; line-height: 1.2em; font-weight: 400; }
+h3 { font-size: 1em; margin-bottom: 0.25em; }
+h4 { font-size: 15px; }
+p, ul, ol, pre { font-size: 1em; margin: 0 0 0.6em; }
+ul, ol { margin-left: 1.4em; }
+ul ul { margin-bottom: 0; }
+p, li { line-height: 1.4em;}
+
+a:link, a:visited { color: #334455; font-weight: bold; text-decoration: none; }
+a:hover { color: #999; }
+h2 a:link, h2 a:visited{ color: #334455; font-weight: 400; }
+h2 a:hover { color: #999; font-weight: 400; }
+
+pre { background: #fff; border: 0px solid #ccc; color: #333940; display: block; margin: 1.0em 0em 1.0em 0em; padding: .6em 0em .6em .6em; overflow: auto; width: 99%; z-index: 0; }
+pre.prettyprint { border: none; padding: .6em 0em .6em .6em; }
+
+/***********************************************
+ * template
+ */
+#bleeder { background:#334455; bottom: 0; height: 100%; position: fixed; opacity:0.25;filter:alpha(opacity=25); top: 0; width: 10px; z-index: 9999; }
+#pg { }
+#bd { }
+#bd:after{display:block;clear:both;visibility:hidden;content:'.';height:0;}
+#sd p { font-size:12px; margin-bottom: 1.8em; }
+#sd ul{ font-size:12px; margin-left: 0em;}
+
+/* blog/post related */
+.body p { line-height:1.6em; }
+.body a:link, .body a:visited { text-decoration:underline; }
+.post .date, .quote .date, .bookmark .date { background: #334455; color: #fff; float: left; margin: 0.3em 0  0 -6.0em; padding:2px .4em 3px 1.2em; width: 3.8em; }
+.post .teaser{ border-bottom: solid 1px #ccc; font-size: 1.1em; margin-bottom: .9em; padding: .1em .1em .8em .1em;}
+.post, .bookmark, .quote { margin-bottom: 1.2em; }
+#comments{ border-top: solid 1px #CCC; margin-top: 1.8em; padding-top: .6em; }
+.list-tease { font-size: .9em; }
+.filter-title{ font-size: 1.4em; }
+.post_list .post, .post_list .quote, .post_list .bookmark {  padding-bottom: 1.2em; }
+.post_detail .subscribe { margin-top: 1.2em; }
+.filter-title{ background-color: #ccc; margin-bottom: 1.2em; padding: .3em; }
+.post-img { background: #e4e4e4; border-left: solid 1.0em #dedede; margin: 1.2em 0em 1.2em 1.2em; padding: .8em .8em 0em 1.6em; width: 564px; }
+.post-img p { line-height: 1.4em; margin-left: .2em; }
+.video { background: #000; text-align: center; }
+ul.recent-posts li, .post li { color: #333940; left-margin: 1.2em; list-style: disc; list-style-position: inside; }
+.bookmark p{ margin-top: .8em;}
+
+/* HEADER/NAV */
+#hd { border-bottom:1px solid #334455; margin:0 0 30px 80px; padding:0 0 15px 0; width:960px; }
+#logo { float:left; font-family:Georgia; font-size:36px; padding:25px 0 0 0; }
+#logo a:link, #logo a:hover, #logo a:visited { color:#345; }
+#logo span.first { font-weight:bold; }
+#logo span.last { font-weight:normal; opacity:0.5;filter:alpha(opacity=50); }
+
+#nav{ float: right; padding:10px 0 0 0; text-align:right; }
+#nav ul li a { font-weight: 400; text-decoration: none; }
+.navbar-one { float:right; margin:0; }
+ul.navbar-one li { color: #999ca0; float:left; font-size:14px; list-style: none; margin:0 0 0 20px; text-decoration: none; }
+#nav form { clear:both; padding:15px 0 0 0; }
+.button{ margin-left: .6em;}
+.subscribe ul{ font-size: .9em; }
+.subscribe li { float:left; list-style: square; margin-left: 2.6em; }
+
+
+/* FOOTER */
+#ft{ border-top:1px solid #334455; clear:both; margin:2.8em 0 0 80px; padding:22px 0 0 0; width:960px; }
+#ft p{ font-size:14px; padding-bottom: 1.8em; }
+
+
+/***********************************************
+ * forms
+ */
+label { display:block; font-weight: bold; }
+#form-error { color: #c14040; }
+#form-error li { list-style: disc; }
+input.text { background:#f6f6f6; border:solid 1px #aaa; padding:2px 4px; }
+
+
+/* PAGINATION */
+#pagination .older{ float: right; }
+#pagination .newew{ float: left; }
+
+
+/* HELPERS */
+.hide
+{
+  display: none;
+  margin-left: -1000;
+}
+
+
+

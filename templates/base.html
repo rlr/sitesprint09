@@ -1,0 +1,143 @@
+{% load disqus_tags flatblock_tags cache navbar generic_content blog compress analytics elsewhere i18n archive %}<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>{% block title %}{{ BLOG_SETTINGS.site_name }}{% endblock %}</title>
+{% block meta %}
+<meta name="keywords" content="{{ BLOG_SETTINGS.meta_keywords }}">
+<meta name="description" content="{{ BLOG_SETTINGS.meta_description }}">
+<meta name="author" content="{{ BLOG_SETTINGS.author_name }}" />
+{% endblock %}
+<meta name="copyright" content="{{ BLOG_SETTINGS.copyright }}" />
+<link rel="shortcut icon" href="{{ STATIC_URL }}imgs/favicon.ico" type="image/x-icon"/>
+{% block rss %}
+<link rel="alternate" type="application/rss+xml" title="{{ BLOG_SETTINGS.site_name }} main rss feed" href="{{ BLOG_SETTINGS.rss_url }}">
+<link rel="alternate" type="application/rss+xml" title="{{ BLOG_SETTINGS.site_name }} all entries feed" href="/feeds/all/">
+<link rel="alternate" type="application/rss+xml" title="{{ BLOG_SETTINGS.site_name }} all posts feed" href="/feeds/latest/">
+{% endblock %}
+{% compress css %}
+<link rel="stylesheet" href="{{ STATIC_URL }}css/960.css" type="text/css" media="all" charset="utf-8">
+<link rel="stylesheet" href="{{ STATIC_URL }}css/pygments.css" type="text/css" media="all" charset="utf-8">
+<link rel="stylesheet" href="{{ STATIC_URL }}css/reset.css" type="text/css" media="all" charset="utf-8">
+<link rel="stylesheet" href="{{ STATIC_URL }}css/style.css" type="text/css" media="all" charset="utf-8">
+{% endcompress %}
+
+<!--[if IE 6]>
+<script src="{{ STATIC_URL }}js/DD_belatedPNG_0.0.7a-min.js"></script>
+<script>
+  DD_belatedPNG.fix('#bleeder, .logo');
+</script>
+<![endif]-->
+
+{% disqus_dev %}
+{% block extra_head %}{% endblock %}
+</head>
+
+<body id="{% block body_id %}{% endblock %}" class="{% block body_class %}blog{% endblock %}">
+<div id="bleeder"></div>
+
+  <div id="pg" class="clearfix">
+  {% block body %}
+  <div id="hd" class="clearfix">
+    <div id="logo">
+      <a href="{% url home_index %}" title="go to {{ BLOG_SETTINGS.site_name }} home page">
+      	<span class="first">ricky</span><span class="last">rosario</span>
+      </a>
+    </div>
+
+    <div id="nav">
+      {% cache 3600 "base.navbars" %}
+      {% navbars %}
+      {% endcache %}
+      <form action="/search/" method="GET"><input class="text" type="text" name="q" value="{{ search_term }}"><input type="submit" class="button" value="Search"></form>
+	  
+    </div>
+    <!-- /nav -->
+
+  </div>
+  <!-- /header -->
+
+  <div id="bd" class="container_16">
+    <div id="main" class="grid_9 suffix_1">
+      <div class="content">
+            {% block content %}{% endblock %}
+      </div>
+    </div>
+
+    <div id="sd" class="grid_6">
+      <ul>
+      	<li><a href="{{ BLOG_SETTINGS.rss_url }}" title"Subscribe via RSS">RSS</a></li>
+        <li><a href="{{ BLOG_SETTINGS.twitter_url }}" title="Follow me on Twitter">Follow me on Twitter</a></li>
+      </ul>
+	  
+	  <h4>{% trans "About" %}</h4>
+      <p>{{ BLOG_SETTINGS.about }}</p>
+
+      <h4>{% trans "Elsewhere" %}</h4>
+      <ul>
+        {% cache 3600 "base.profiles" %}
+        {% get_elsewhere_profiles as profiles %}
+        {% for item in profiles %}
+        <li><a href="{{ item.url }}" rel="me" title="{{ item.name }}">{{ item.name }}</a></li>
+        {% endfor %}
+      </ul>
+      {% endcache %}
+
+      <h4>{% trans "Categories" %}</h4>
+      <ul>
+		{% cache 3600 "base.category_list" %}
+		{% get_blog_categories as category_list %}
+		{% for category in category_list %}
+		<li><a href="{% url basic.blog.views.category_detail category.slug %}" title="{{ category.title }}">{{ category.title }}</a></li>
+		{% endfor %}
+		</ul>
+		{% endcache %}
+
+		{% cache 3600 "base.post_list" %}
+		{% get_latest_posts 10 as post_list %}
+		<h4>{% trans "Recent Posts" %}</h4>
+		<ul class="recent-posts">
+		{% for post in post_list %}
+		<li><a href="{{ post.get_absolute_url }}" title="{{ post.title }}">{{ post.title }}</a></li>
+		{% endfor %}
+		</ul>
+		{% endcache %}
+
+		{% cache 7200 "base.archive" %}
+		{% get_post_archive as dates %}
+		<h4>{% trans "Archive" %}</h4>
+		<ul class="archive">
+		{% for date in dates %}
+		<li><a href="{% url blog_archive_month date|date:"Y", date|date:"b" %}" title="{{ date|date:"F Y" }}">{{ date|date:"F Y" }}</a></li>
+		{% endfor %}
+		</ul>
+		{% endcache %}
+
+		{% cache 3600 "bas.popular-posts" %}
+		<h4>{% trans "Popular Posts" %}</h4>
+		<ul class="recent-posts">
+		{% get_popular_posts 10 as popular_post_list %}
+		{% for item in popular_post_list %}
+		<li><a href="{{ item.get_absolute_url }}" title="{{ item.title }}">{{ item.title }}</a></li>
+		{% endfor %}
+		</ul>
+		{% endcache %}
+    </div>
+  </div>
+  {% endblock %}
+  	  <div id="ft">
+	    <p>
+	      {% cache 3600 "base.footer" %}
+	      {% flatblock "footer" 3600 "flatblocks/bare.html" %}
+	      {% endcache %}
+	    </p>
+	  </div>
+  </div>
+
+  <!-- google analtyics -->
+  {% cache 7200 "base.analytics" %}
+  {% analytics %}
+  {% endcache %}
+
+</body>
+</html>
