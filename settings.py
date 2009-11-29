@@ -12,7 +12,7 @@ STATIC_URL = '/media/static/'
 ADMIN_MEDIA_PREFIX = '/admin_media/'
 
 SITE_ID=1
-ROOT_URLCONF = 'mingus.urls'
+ROOT_URLCONF = 'rr.urls'
 TIME_ZONE = 'America/New_York'
 SECRET_KEY = '+bq@o(jph^-*sfj4j%xukecxb0jae9lci&ysy=609hj@(l$47c'
 USE_I18N = False
@@ -44,7 +44,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 "django.core.context_processors.i18n",
 "django.core.context_processors.media",
 "basic.blog.context_processors.blog_settings",
-"mingus.core.context_processors.site_info",
+"rr.core.context_processors.site_info",
 "navbar.context_processors.navbars",
 )
 
@@ -84,7 +84,7 @@ INSTALLED_APPS = (
   'honeypot',
   'sugar',
   'quoteme',
-  'mingus',
+  'rr',
 )
 
 try:
