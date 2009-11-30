@@ -11,12 +11,13 @@
 <meta name="copyright" content="{{ BLOG_SETTINGS.copyright }}" />
 <link rel="shortcut icon" href="{{ STATIC_URL }}imgs/favicon.ico" type="image/x-icon"/>
 {% block rss %}
-<link rel="alternate" type="application/rss+xml" title="{{ BLOG_SETTINGS.site_name }} main rss feed" href="{{ BLOG_SETTINGS.rss_url }}">
+<link rel="alternate" type="application/rss+xml" title="{{ BLOG_SETTINGS.site_name }} blog rss feed" href="{{ BLOG_SETTINGS.rss_url }}">
+{% comment %}
 <link rel="alternate" type="application/rss+xml" title="{{ BLOG_SETTINGS.site_name }} all entries feed" href="/feeds/all/">
 <link rel="alternate" type="application/rss+xml" title="{{ BLOG_SETTINGS.site_name }} all posts feed" href="/feeds/latest/">
+{% endcomment %}
 {% endblock %}
 {% compress css %}
-<link rel="stylesheet" href="{{ STATIC_URL }}css/960.css" type="text/css" media="all" charset="utf-8">
 <link rel="stylesheet" href="{{ STATIC_URL }}css/pygments.css" type="text/css" media="all" charset="utf-8">
 <link rel="stylesheet" href="{{ STATIC_URL }}css/reset.css" type="text/css" media="all" charset="utf-8">
 <link rel="stylesheet" href="{{ STATIC_URL }}css/style.css" type="text/css" media="all" charset="utf-8">
@@ -27,9 +28,9 @@
 
 <body id="{% block body_id %}{% endblock %}" class="{% block body_class %}blog{% endblock %}">
   <div id="bleeder"></div>
-  <div id="pg" class="clearfix">
+  <div id="pg">
   {% block body %}
-  <div id="hd" class="clearfix">
+  <div id="hd">
     <div id="logo">
       <a href="{% url home_index %}" title="go to {{ BLOG_SETTINGS.site_name }} home page">
       	<span class="first">ricky</span><span class="last">rosario</span>
@@ -42,13 +43,13 @@
       <form action="/search/" method="GET"><input class="text" type="text" name="q" value="{{ search_term }}"><input type="submit" class="button" value="search"></form>
     </div>
   </div>
-  <div id="bd" class="container_16">
-    <div id="main" class="grid_9 suffix_1">
+  <div id="bd">
+    <div id="main">
       <div class="content">
             {% block content %}{% endblock %}
       </div>
     </div>
-    <div id="sd" class="grid_6">
+    <div id="sd">
       <ul>
       	<li><a href="{{ BLOG_SETTINGS.rss_url }}" title"Subscribe via RSS">RSS</a></li>
         <li><a href="{{ BLOG_SETTINGS.twitter_url }}" title="Follow me on Twitter">Follow me on Twitter</a></li>

@@ -25,9 +25,12 @@ pre.prettyprint { border: none; padding: .6em 0em .6em .6em; }
  * template
  */
 #bleeder { background:#334455; bottom: 0; height: 100%; position: fixed; opacity:0.25;filter:alpha(opacity=25); top: 0; width: 10px; z-index: 9999; }
-#pg { }
-#bd { }
-#bd:after{display:block;clear:both;visibility:hidden;content:'.';height:0;}
+#pg { margin:0 0 0 80px; width:960px; }
+#bd { zoom:1; }
+#hd:after, #bd:after{display:block;clear:both;visibility:hidden;content:'.';height:0;}
+
+#main { display: inline; float: left; margin:0 10px; width:540px; }
+#sd { display: inline; float:right; margin:0 10px; width:300px; }
 #sd p { font-size:12px; margin-bottom: 1.8em; }
 #sd ul{ font-size:12px; margin-left: 0em;}
 
@@ -50,7 +53,7 @@ ul.recent-posts li, .post li { color: #333940; left-margin: 1.2em; list-style: d
 .bookmark p{ margin-top: .8em;}
 
 /* HEADER/NAV */
-#hd { border-bottom:1px solid #99a1aa; margin:0 0 30px 80px; padding:0 0 15px 0; width:960px; }
+#hd { border-bottom:1px solid #99a1aa; margin:0 0 30px 0; padding:0 0 15px 0; zoom:1; }
 #logo { float:left; font-family:Georgia; font-size:36px; padding:25px 0 0 0; }
 #logo a:link, #logo a:hover, #logo a:visited { color:#345; }
 #logo span.first { font-weight:bold; }
@@ -65,7 +68,7 @@ ul.navbar-one li { color: #999ca0; float:left; font-size:14px; list-style: none;
 .subscribe ul{ font-size: .9em; }
 .subscribe li { float:left; list-style: square; margin-left: 2.6em; }
 
-#ft{ border-top:1px solid #99a1aa; clear:both; margin:2.8em 0 0 80px; padding:22px 0 0 0; width:960px; }
+#ft{ border-top:1px solid #99a1aa; clear:both; margin:20px 0 0 0; padding:22px 0 0 0; width:960px; }
 #ft p{ font-size:14px; padding-bottom: 1.8em; }
 
 
@@ -90,5 +93,5 @@ input.text { background:#f6f6f6; border:solid 1px #ccd0d4; padding:2px 4px; }
   margin-left: -1000;
 }
 
-
-
+.clearfix { zoom:1; }
+.clearfix:after{display:block;clear:both;visibility:hidden;content:'.';height:0;}
