@@ -19,7 +19,7 @@ USE_I18N = False
 HONEYPOT_FIELD_NAME = 'fonzie_kungfu'
 
 MANAGERS = (
-    ('fooper','your@emailaddress'),
+    ('Ricky Rosario','rickyrosario@gmail.com'),
 )
 
 TEMPLATE_DIRS = (
