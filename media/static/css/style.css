@@ -35,7 +35,7 @@ pre.prettyprint { border: none; padding: .6em 0em .6em .6em; }
 .body p { line-height:1.6em; }
 .body a:link, .body a:visited { text-decoration:underline; }
 .post .date, .quote .date, .bookmark .date { background: #334455; color: #fff; float: left; margin: 0.3em 0  0 -6.0em; padding:2px .4em 3px 1.2em; width: 3.8em; }
-.post .teaser{ border-bottom: solid 1px #ccc; font-size: 1.1em; margin-bottom: .9em; padding: .1em .1em .8em .1em;}
+.post .teaser{ border-bottom: solid 1px #ccd0d4; font-size: 1.1em; margin-bottom: .9em; padding: .1em .1em .8em .1em;}
 .post, .bookmark, .quote { margin-bottom: 1.2em; }
 #comments{ border-top: solid 1px #CCC; margin-top: 1.8em; padding-top: .6em; }
 .list-tease { font-size: .9em; }
@@ -50,7 +50,7 @@ ul.recent-posts li, .post li { color: #333940; left-margin: 1.2em; list-style: d
 .bookmark p{ margin-top: .8em;}
 
 /* HEADER/NAV */
-#hd { border-bottom:1px solid #334455; margin:0 0 30px 80px; padding:0 0 15px 0; width:960px; }
+#hd { border-bottom:1px solid #99a1aa; margin:0 0 30px 80px; padding:0 0 15px 0; width:960px; }
 #logo { float:left; font-family:Georgia; font-size:36px; padding:25px 0 0 0; }
 #logo a:link, #logo a:hover, #logo a:visited { color:#345; }
 #logo span.first { font-weight:bold; }
@@ -65,9 +65,7 @@ ul.navbar-one li { color: #999ca0; float:left; font-size:14px; list-style: none;
 .subscribe ul{ font-size: .9em; }
 .subscribe li { float:left; list-style: square; margin-left: 2.6em; }
 
-
-/* FOOTER */
-#ft{ border-top:1px solid #334455; clear:both; margin:2.8em 0 0 80px; padding:22px 0 0 0; width:960px; }
+#ft{ border-top:1px solid #99a1aa; clear:both; margin:2.8em 0 0 80px; padding:22px 0 0 0; width:960px; }
 #ft p{ font-size:14px; padding-bottom: 1.8em; }
 
 
@@ -77,7 +75,7 @@ ul.navbar-one li { color: #999ca0; float:left; font-size:14px; list-style: none;
 label { display:block; font-weight: bold; }
 #form-error { color: #c14040; }
 #form-error li { list-style: disc; }
-input.text { background:#f6f6f6; border:solid 1px #aaa; padding:2px 4px; }
+input.text { background:#f6f6f6; border:solid 1px #ccd0d4; padding:2px 4px; }
 
 
 /* PAGINATION */
