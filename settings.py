@@ -64,7 +64,7 @@ INSTALLED_APPS = (
   'disqus',
   'basic.inlines',
   'basic.blog',
-  'basic.bookmarks',
+  #'basic.bookmarks',
   'basic.media',
   'oembed',
   'flatblocks',
@@ -83,7 +83,7 @@ INSTALLED_APPS = (
   'contact_form',
   'honeypot',
   'sugar',
-  'quoteme',
+  #'quoteme',
   'rr',
 )
 
