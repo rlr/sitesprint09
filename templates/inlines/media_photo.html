@@ -1,8 +1,8 @@
-{% load thumbnail %}
-
-<div class="post-img clearfix">
-<img src="{% thumbnail object.photo 580x500 crop %}" alt="{{ object.title }}" title="{{ object.title }}">
+<div class="post-img">
+<img src="/media/{{ object.photo }}" alt="{{ object.title }}" title="{{ object.title }}">
+{% if object.description %}
 <p>
   {{ object.description }}
 </p>
+{% endif %}
 </div>
