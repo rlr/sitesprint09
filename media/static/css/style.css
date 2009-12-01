@@ -9,7 +9,7 @@ h1, h2 { color:#334455; margin: 0.25em 0 .2em; font-size: 1.8em; letter-spacing:
 h3 { font-size: 1em; margin-bottom: 0.25em; }
 h4 { font-size: 15px; }
 p, ul, ol, pre { font-size: 1em; margin: 0 0 0.6em; }
-ul, ol { margin-left: 1.4em; }
+ul, ol { margin-left: 2em; }
 ul ul { margin-bottom: 0; }
 p, li { line-height: 1.4em;}
 
@@ -35,7 +35,7 @@ pre.prettyprint { border: none; padding: .6em 0em .6em .6em; }
 #sd ul{ font-size:12px; margin-left: 0em;}
 
 /* blog/post related */
-.body p { line-height:1.6em; }
+.body p { line-height:1.6em; margin:0 0 16px 0; }
 .body a:link, .body a:visited { text-decoration:underline; }
 .post .date, .quote .date, .bookmark .date { background: #334455; color: #fff; float: left; margin: 0.3em 0  0 -6.0em; padding:2px .4em 3px 1.2em; width: 3.8em; }
 .post .teaser{ border-bottom: solid 1px #ccd0d4; font-size: 1.1em; margin-bottom: .9em; padding: .1em .1em .8em .1em;}
@@ -49,7 +49,8 @@ pre.prettyprint { border: none; padding: .6em 0em .6em .6em; }
 .post-img { }
 .post-img p { }
 .video { background: #000; text-align: center; }
-ul.recent-posts li, .post li { color: #333940; left-margin: 1.2em; list-style: disc; list-style-position: inside; }
+ul.recent-posts li, .post li { left-margin: 1.2em; list-style: disc; list-style-position: outside; }
+ul.recent-posts li { list-style-position:inside; }
 .bookmark p{ margin-top: .8em;}
 
 /* HEADER/NAV */
@@ -68,8 +69,8 @@ ul.navbar-one li { color: #999ca0; float:left; list-style: none; margin:0 0 0 20
 .subscribe ul{ font-size: .9em; }
 .subscribe li { float:left; list-style: square; margin-left: 2.6em; }
 
-#ft{ border-top:1px solid #99a1aa; clear:both; margin:20px 0 0 0; padding:22px 0 0 0; width:960px; }
-#ft p{ font-size:14px; padding-bottom: 1.8em; }
+#ft{ border-top:1px solid #99a1aa; clear:both; color:#555; font-size:13px; margin:20px 0 0 0; padding:22px 0 0 0; width:960px; }
+#ft p{ }
 
 
 /***********************************************
