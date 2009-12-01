@@ -46,8 +46,8 @@ pre.prettyprint { border: none; padding: .6em 0em .6em .6em; }
 .post_list .post, .post_list .quote, .post_list .bookmark {  padding-bottom: 1.2em; }
 .post_detail .subscribe { margin-top: 1.2em; }
 .filter-title{ background-color: #ccc; margin-bottom: 1.2em; padding: .3em; }
-.post-img { background: #e4e4e4; border-left: solid 1.0em #dedede; margin: 1.2em 0em 1.2em 1.2em; padding: .8em .8em 0em 1.6em; width: 564px; }
-.post-img p { line-height: 1.4em; margin-left: .2em; }
+.post-img { }
+.post-img p { }
 .video { background: #000; text-align: center; }
 ul.recent-posts li, .post li { color: #333940; left-margin: 1.2em; list-style: disc; list-style-position: inside; }
 .bookmark p{ margin-top: .8em;}
@@ -62,7 +62,7 @@ ul.recent-posts li, .post li { color: #333940; left-margin: 1.2em; list-style: d
 #nav{ float: right; padding:10px 0 0 0; text-align:right; }
 #nav ul li a { font-weight: 400; text-decoration: none; }
 .navbar-one { float:right; margin:0; }
-ul.navbar-one li { color: #999ca0; float:left; font-size:14px; list-style: none; margin:0 0 0 20px; text-decoration: none; }
+ul.navbar-one li { color: #999ca0; float:left; list-style: none; margin:0 0 0 20px; text-decoration: none; }
 #nav form { clear:both; padding:15px 0 0 0; }
 .button{ margin-left: .6em;}
 .subscribe ul{ font-size: .9em; }
