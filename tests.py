@@ -44,7 +44,7 @@ class MingusClientTests(unittest.TestCase):
         self.failUnlessEqual(response.status_code, 200)
 
         #test result as expected
-        self.assertEquals(response.context['object_list'][0].title, 'Django Community')
+        self.assertEquals(response.context['object_list'][0].title, 'django-mingus forked #sitesprint')
 
     def test_About(self):
         'Test if the about page renders.'
@@ -87,25 +87,6 @@ class MingusClientTests(unittest.TestCase):
                     'foo@foo.com', 'body': 'hello.', 'fonzie_kungfu': 'evil'},
                     follow=True)
         self.failUnlessEqual(response.status_code, 400)
-
-
-    def test_QuoteList(self):
-        '''Test quote list page renders.'''
-
-        c = Client()
-        response = c.get('/quotes/')
-        self.failUnlessEqual(response.status_code, 200)
-
-    def test_QuoteDetail(self):
-        '''Test quote list page renders.'''
-
-        from quoteme.models import Quote
-        quote = Quote.objects.all()[0]
-
-        c = Client()
-        response = c.get(quote.get_absolute_url())
-        self.failUnlessEqual(response.status_code, 200)
-
 
     def test_RSS(self):
         '''Test the latest posts feed displays.'''
