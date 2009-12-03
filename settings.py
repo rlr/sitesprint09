@@ -85,6 +85,7 @@ INSTALLED_APPS = (
   'sugar',
   #'quoteme',
   'rr',
+  'lifestream',
 )
 
 try:

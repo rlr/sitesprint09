@@ -10,6 +10,7 @@ Markdown==2.0.1
 textile==2.1.3
 django-markup==0.3
 http://www.aeracode.org/releases/south/south-0.6.1.tar.gz
+httplib2==0.5.0
 
 -e git://github.com/django-extensions/django-extensions.git@664ca825578c5c13f0817eba0578fbda4bac62cf#egg=django_extensions
 -e svn+http://django-template-utils.googlecode.com/svn/trunk@109#egg=template_utils-0.4p2-py2.5-dev
@@ -29,3 +30,5 @@ http://www.aeracode.org/releases/south/south-0.6.1.tar.gz
 -e git://github.com/montylounge/django-sugar.git@26bb6a8ab966707c53c817c9b16dbb0dee54d8e4#egg=django_sugar
 -e hg+https://bitbucket.org/kmike/django-view-cache-utils/@tip#egg=django_view_cache_utils-tip
 -e hg+https://sorl-thumbnail.googlecode.com/hg/@tip#egg=sorl_thumbnail-tip
+
+pymongo==1.1.2
