@@ -10,7 +10,7 @@ from lifestream.providers import utils
 # API URLs
 #
 
-RSS_URL = "http://feeds.delicious.com/v2/json/%s" % settings.DELICIOUS_USERNAME
+JSON_URL = "http://feeds.delicious.com/v2/json/%s" % settings.DELICIOUS_USERNAME
  
 #
 # Public API
@@ -20,7 +20,7 @@ log = logging.getLogger("lifestream.providers.delicious")
 
 def update():
     log.debug("Fetching delicious updates...")
-    updates = utils.getjson(RSS_URL)
+    updates = utils.getjson(JSON_URL)
     _save_updates(updates)
     
 
