@@ -51,6 +51,15 @@ def parsedate(s):
     if dt.tzinfo:
         dt = dt.astimezone(dateutil.tz.tzlocal()).replace(tzinfo=None)
     return dt
+
+def parsedateutc(s):
+    """
+    Convert a string into a (utc, naive) datetime object.
+    """
+    dt = dateutil.parser.parse(s)
+    if dt.tzinfo:
+        dt = dt.astimezone(dateutil.tz.tzutc()).replace(tzinfo=None)
+    return dt
  
 def safeint(s):
     """Always returns an int. Returns 0 on failure."""
