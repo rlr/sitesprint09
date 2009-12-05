@@ -2,19 +2,10 @@ from django.conf import settings
 
 from pymongo import Connection
 
-MONGODB_HOST = "localhost"
-MONGODB_PORT = 27017
-MONGODB_DB = "lifestream_db"
-MONGODB_LS_COLLECTION = "lifestream"
-
-if hasattr(settings, "MONGODB_HOST"):
-    MONGODB_HOST = settings.MONGODB_HOST
-if hasattr(settings, "MONGODB_PORT"):
-    MONGODB_PORT = settings.MONGODB_PORT
-if hasattr(settings, "MONGODB_DB"):
-    MONGODB_DB = settings.MONGODB_DB
-if hasattr(settings, "MONGODB_LIFESTREAM_COLLECTION"):
-    MONGODB_LS_COLLECTION = settings.MONGODB_LS_COLLECTION
+MONGODB_HOST = getattr(settings, "MONGODB_HOST", "localhost")
+MONGODB_PORT = getattr(settings, "MONGODB_PORT", 27017)
+MONGODB_DB = getattr(settings, "MONGODB_DB", "lifestream_db")
+MONGODB_LS_COLLECTION = getattr(settings, "MONGODB_LIFESTREAM_COLLECTION", "lifestream")
     
 _connection = Connection(MONGODB_HOST, MONGODB_PORT)
 _db = _connection[MONGODB_DB]
