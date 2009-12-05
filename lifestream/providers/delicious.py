@@ -40,7 +40,7 @@ def _save_update(update):
     delicious_id = update["u"]
     src = u"delicious:%s" % settings.DELICIOUS_USERNAME
 
-    # check that tweet isn't already stored
+    # check that update isn't already stored
     if collection.find_one({"u":delicious_id, "lifestream:source":src}):
         log.debug("update (%s) already saved" % update["u"])
         return
