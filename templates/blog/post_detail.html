@@ -9,12 +9,12 @@
 <meta name="author" content="{{ object.author.get_full_name }}" />
 {% endblock %}
 
-{% block body_class %}{{ block.super }} post_detail{% endblock %}
-{% block body_id %}post_{{ object.id }}{% endblock %}
+{% block body_class %}{{ block.super }} post-detail{% endblock %}
+{% block body_id %}post-{{ object.id }}{% endblock %}
 
 {% comment 'previous and next posts' %}
 {% block content_title %}
-  <p class="other_posts">
+  <p class="other-posts">
     {% if object.get_previous_by_publish %}
     <a class="previous" href="{{ object.get_previous_post.get_absolute_url }}">&laquo; {{ object.get_previous_post }}</a>
     {% endif %}
@@ -27,7 +27,7 @@
 
 {% block content %}
 
-  <div class="post clearfix">
+  <div class="post">
     <div class="date">{{ object.publish|date:"M d" }}</div>
     <h1>{{ object.title }}</h1>
     <p class="teaser">{{ object.tease|safe }}</p>
@@ -41,7 +41,7 @@
   {% cache 300 "blog.post_detail.tag_list" object.pk %}
   {% tags_for_object object as tag_list %}
   {% if tag_list %}
-  <p class="inline_tag_list"><strong>Tags:</strong>
+  <p class="inline-tag-list"><strong>Tags:</strong>
     {% for tag in tag_list %}
     <a href="/tags/{{ tag }}">{{ tag }}</a>{% if not forloop.last %}, {% endif %}
     {% endfor %}
@@ -53,7 +53,7 @@
   {% tagged_get_related object in blog.Post as post_list with num=3 %}
   {% if post_list %}
   <div class="related-posts">
-  <p class="inline_tag_list"><strong>Related posts:</strong></p>
+  <p class="inline-tag-list"><strong>Related posts:</strong></p>
   <ol>
   {% for post in post_list %}
   <li><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></li>

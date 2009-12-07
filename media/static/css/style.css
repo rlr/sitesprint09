@@ -43,8 +43,9 @@ pre.prettyprint { border: none; padding: .6em 0em .6em .6em; }
 #comments{ border-top: solid 1px #CCC; margin-top: 1.8em; padding-top: .6em; }
 .list-tease { font-size: .9em; }
 .filter-title{ font-size: 1.4em; }
-.post_list .post, .post_list .quote, .post_list .bookmark {  padding-bottom: 1.2em; }
-.post_detail .subscribe { margin-top: 1.2em; }
+.post-list .post, .post-list .quote, .post-list .bookmark {  padding-bottom: 1.2em; zoom:1; }
+.post-list .post:after, .post-list .quote:after, .post-list .bookmark:after{display:block;clear:both;visibility:hidden;content:'.';height:0;}
+.post-detail .subscribe { margin-top: 1.2em; }
 .filter-title{ background-color: #ccc; margin-bottom: 1.2em; padding: .3em; }
 .post-img { }
 .post-img p { }
@@ -66,6 +67,8 @@ ul.recent-posts li { list-style-position:inside; }
 ul.navbar-one li { color: #999ca0; float:left; list-style: none; margin:0 0 0 20px; text-decoration: none; }
 #nav form { clear:both; padding:15px 0 0 0; }
 .button{ margin-left: .6em;}
+.subscribe { zoom:1; }
+.subscribe:after{display:block;clear:both;visibility:hidden;content:'.';height:0;}
 .subscribe ul{ font-size: .9em; }
 .subscribe li { float:left; list-style: square; margin-left: 2.6em; }
 

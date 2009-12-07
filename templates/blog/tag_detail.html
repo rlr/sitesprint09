@@ -6,10 +6,9 @@
 {% block body_id %}tag_{{ tag.id }}{% endblock %}
 
 {% block content %}
+<h1 class="filter-title">{% trans "Posts tagged:" %} {{ tag.name }}</h1>
 
-<h2 class="filter-title">{% trans "Posts tagged:" %} {{ tag.name }}</h2>
-
-  <div class="post_list">
+  <div class="post-list">
   {% cache 3600 "blog.tag_detail.object_list" tag.name %}
     {% for post in object_list %}
   {% include "blog/includes/post_list.html" %}

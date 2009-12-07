@@ -2,12 +2,12 @@
 
 
 {% block title %}{{ block.super }}{% endblock %}
-{% block body_class %}{{ block.super }} post_list{% endblock %}
+{% block body_class %}{{ block.super }} post-list{% endblock %}
 
 {% block content_title %}{% endblock %}
 
 {% block content %}
-  <div class="post_list">
+  <div class="post-list">
     {% for object in object_list %}
     {% ifequal object.content_type.name "post" %}
       {% include "proxy/includes/post_item.html" %}
