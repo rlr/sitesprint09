@@ -31,8 +31,8 @@ pre.prettyprint { border: none; padding: .6em 0em .6em .6em; }
 
 #main { display: inline; float: left; margin:0 10px; width:540px; }
 #sd { display: inline; float:right; margin:0 10px; width:300px; }
-#sd p { font-size:12px; margin-bottom: 1.8em; }
-#sd ul{ font-size:12px; margin-left: 0em;}
+#sd p { font-size:13px; margin-bottom: 1.8em; }
+#sd ul{ font-size:13px; margin-left: 0em;}
 
 /* blog/post related */
 .body p { line-height:1.6em; margin:0 0 16px 0; }

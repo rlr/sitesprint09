@@ -32,3 +32,4 @@ httplib2==0.5.0
 -e hg+https://sorl-thumbnail.googlecode.com/hg/@tip#egg=sorl_thumbnail-tip
 
 pymongo==1.1.2
+-e git+git://github.com/alex/django-templatetag-sugar#egg=template_sugar

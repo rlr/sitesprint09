@@ -57,12 +57,12 @@ urlpatterns += patterns('',
         { 'template': 'contact_form/contact_form_sent.html' },
         name='contact_form_sent'),
 
-    url(r'^page/(?P<page>\w)/$',
-        view=home_list,
-        name='home_paginated'),
+    #url(r'^page/(?P<page>\w)/$',
+    #    view=home_list,
+    #    name='home_paginated'),
 
     url(r'^$',
-        view=home_list,
+        view='lifestream.views.activity_list',
         name='home_index'),
 
     url(r'^tags/(?P<slug>[-\w]+)/$', 'rr.core.views.tag_detail',

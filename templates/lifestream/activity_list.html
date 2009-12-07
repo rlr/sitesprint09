@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load lifestream_tags %}
+
+{% block title %}{{ block.super }}{% endblock %}
+
+{% block body_class %}lifestream{% endblock %}
+
+{% block content %}
+<div class="post-list">
+	{% for object in object_list %}
+	<div class="post {{ object|ls_key:"lifestream:provider" }}">
+		{% timestampdate object as thedate %}
+		{% ifchanged thedate %}
+			<div class="date">{{ object|ls_key:"lifestream:timestamp"|date:"M d" }}</div>
+		{% endifchanged %}
+  		{{ object|ls_key:"lifestream:provider" }} /
+		{{ object|ls_key:"lifestream:source" }}
+	</div
+	{% endfor %}
+</div>
+{% endblock %}
