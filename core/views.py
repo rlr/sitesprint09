@@ -36,6 +36,19 @@ def post_result_item(post):
         'text': post.body,
         }
 
+def home(request, template='home.html'):
+    """
+    home page
+    """
+    latest_post = Post.objects.published()[0]
+    return render_to_response(
+            template,
+            {
+                'latest_post': latest_post
+            },
+            context_instance=RequestContext(request),
+        )
+
 def springsteen_results(request):
     '''
     Creates the django-springsteen compliant JSON results for only for findjango

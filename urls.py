@@ -62,7 +62,7 @@ urlpatterns += patterns('',
     #    name='home_paginated'),
 
     url(r'^$',
-        view='lifestream.views.activity_list',
+        view='core.views.home',
         name='home_index'),
 
     url(r'^tags/(?P<slug>[-\w]+)/$', 'rr.core.views.tag_detail',

@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load lifestream_tags %}
+
+{% block title %}{{ block.super }}{% endblock %}
+
+{% block body_class %}home{% endblock %}
+
+{% block content %}
+<h2>Latest Blog Post</h2>
+<div class="post-list">
+	<div class="post">
+		<div class="date">{{ latest_post.publish|date:"M d" }}</div>
+		<h3><a href="{{ latest_post.get_absolute_url }}">{{ latest_post.title }}</a></h3>
+		<p class="list-tease">{{ latest_post.tease|safe }}</p>
+		<p class="text">
+			{{ latest_post.body|safe|striptags|truncatewords:50 }}
+			<a href="{{ latest_post.get_absolute_url }}">continue reading</a>
+		</p>
+		
+	</div>
+</div>
+
+<h2 class="latest-activity">Latest Activity</h2>
+{% latest_activity %}
+{% endblock %}

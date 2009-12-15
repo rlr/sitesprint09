@@ -1,5 +1,9 @@
+{% load lifestream_tags %}
 <p class="text">{{ object.text}}
 {% if object.in_reply_to_status_id %}
+<span class="meta">
+<a class="datetime" href="http://twitter.com/{{ object.user.screen_name }}/status/{{ object.id }}">{{ object|ls_key:"lifestream:timestamp"|date:"g:iA"|lower }}</a>
 <a href="http://twitter.com/{{ object.in_reply_to_screen_name }}/status/{{ object.in_reply_to_status_id }}" class="in-reply-to">in reply to {{ object.in_reply_to_screen_name }}</a>
+</span>
 {% endif %}
 </p>

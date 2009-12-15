@@ -29,3 +29,18 @@ def ls_activity(activity):
     t = template.loader.get_template('lifestream/_'+activity['lifestream:provider']+'.html')
     return t.render(Context({'object': activity}))
 
+
+import pymongo
+import lifestream.mongodb as mongodb
+
+PAGE_SIZE = 50
+
+def latest_activity(context, page=1):
+    collection = mongodb.get_collection()
+    object_list = collection.find().sort('lifestream:timestamp', pymongo.DESCENDING ).limit(PAGE_SIZE).skip((page-1)*PAGE_SIZE)
+    to_return = {
+        'object_list': list(object_list),
+    }
+    return to_return
+
+register.inclusion_tag('lifestream/_activity_list.html', takes_context=True)(latest_activity)

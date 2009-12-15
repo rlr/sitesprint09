@@ -6,8 +6,8 @@ body { background: #fff; color: #000; font-family: "Helvetica Neue", Arial, Helv
 h1, h2, h3, h4, h5 { color:#000; font-family:Georgia; }
 h2, h3, h4, h5 { margin: 1em 0 0.2em; font-weight: bold; }
 h1, h2 { color:#334455; margin: 0.25em 0 .2em; font-size: 1.8em; letter-spacing: -0.025em; line-height: 1.2em; font-weight: 400; }
-h3 { font-size: 1em; margin-bottom: 0.25em; }
-h4 { font-size: 15px; }
+h3 { font-size:18px; margin-bottom: 0.25em; }
+h4 { font-size:15px; }
 p, ul, ol, pre { font-size: 1em; margin: 0 0 0.6em; }
 ul, ol { margin-left: 2em; }
 ul ul { margin-bottom: 0; }
@@ -37,11 +37,12 @@ pre.prettyprint { border: none; padding: .6em 0em .6em .6em; }
 /* blog/post related */
 .body p { line-height:1.6em; margin:0 0 16px 0; }
 .body a:link, .body a:visited { text-decoration:underline; }
-.post .date, .quote .date, .bookmark .date { background: #334455; color: #fff; float: left; margin: 0.3em 0  0 -6.0em; padding:2px .4em 3px 1.2em; width: 3.8em; }
+.post .date, .quote .date, .bookmark .date { background: #334455; color: #fff; float: left; margin: 0 0  0 -6.0em; padding:2px .4em 3px 1.2em; width: 3.8em; }
 .post .teaser{ border-bottom: solid 1px #ccd0d4; font-size: 1.1em; margin-bottom: .9em; padding: .1em .1em .8em .1em;}
 .post, .bookmark, .quote { margin-bottom: 1.2em; }
 #comments{ border-top: solid 1px #CCC; margin-top: 1.8em; padding-top: .6em; }
-.list-tease { font-size: .9em; }
+.list-tease { }
+.post .text { color:#666; font-style:italic; }
 .filter-title{ font-size: 1.4em; }
 .post-list .post, .post-list .quote, .post-list .bookmark {  padding-bottom: 1.2em; zoom:1; }
 .post-list .post:after, .post-list .quote:after, .post-list .bookmark:after{display:block;clear:both;visibility:hidden;content:'.';height:0;}
@@ -75,6 +76,16 @@ ul.navbar-one li { color: #999ca0; float:left; list-style: none; margin:0 0 0 20
 #ft{ border-top:1px solid #99a1aa; clear:both; color:#555; font-size:13px; margin:20px 0 0 0; padding:22px 0 0 0; width:960px; }
 #ft p{ }
 
+/* lifestream */
+h2.latest-activity { border-top: solid 2px #334455; padding:30px 0 0 0; }
+.lifestream { }
+.lifestream .post { border-bottom:solid 1px #f0f0f0; margin:10px; padding:0 65px 0 0; }
+.lifestream .post .datetime { color:#999; font-size:11px; font-weight:normal; text-decoration:underline; }
+.lifestream .github { background:transparent url(../imgs/logos/github.gif) no-repeat right 5px; }
+.lifestream .twitter { background:transparent url(../imgs/logos/twitter.gif) no-repeat right 5px; }
+.lifestream .twitter span.meta { white-space:nowrap; }
+.lifestream .twitter a.in-reply-to { color:#6699aa; font-weight:normal; font-size:11px; text-decoration:underline; }
+.lifestream .delicious { background:transparent url(../imgs/logos/delicious.gif) no-repeat 480px 0px; }
 
 /***********************************************
  * forms

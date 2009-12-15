@@ -1,14 +1,4 @@
-{% extends "base.html" %}
 {% load lifestream_tags %}
-
-{% block title %}{{ block.super }}{% endblock %}
-
-{% block body_class %}lifestream{% endblock %}
-
-{% block content %}
-<h2>Latest Blog Post</h2>
-
-<h2>Latest Activity</h2>
 <div class="post-list lifestream">
 	{% for object in object_list %}
 	<div class="post {{ object|ls_key:"lifestream:provider" }}">
@@ -17,11 +7,6 @@
 			<div class="date">{{ object|ls_key:"lifestream:timestamp"|date:"M d" }}</div>
 		{% endifchanged %}
 		{% ls_activity object %}
-		{% comment %}
-  		{{ object|ls_key:"lifestream:provider" }} /
-		{{ object|ls_key:"lifestream:source" }}
-		{% endcomment %}
 	</div
 	{% endfor %}
 </div>
-{% endblock %}
