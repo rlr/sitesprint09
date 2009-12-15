@@ -24,8 +24,10 @@ log = logging.getLogger("lifestream.providers.flickr")
 
 def update():
     log.debug("Fetching flickr photos...")
-    photos =  utils.getjson(JSON_URL)["photos"]["photo"]
-    _save_pics(photos)
+    json =  utils.getjson(JSON_URL)
+    if json.has_key('photos') and json["photos"].has_key('photo'):
+        photos = json["photos"]["photo"]
+        _save_pics(photos)
     
 
 #
