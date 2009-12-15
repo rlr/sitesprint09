@@ -67,7 +67,12 @@ def _save_tweets(tweets):
     map(_save_tweet, tweets)
 
 def _save_tweet(tweet):
-    twitter_id = tweet["id"]
+    try:
+        twitter_id = tweet["id"]
+    except TypeError:
+        print "Error saving tweet - %s" % tweet
+        return
+
     src = u"twitter:user:%s" % settings.TWITTER_USERNAME
 
     # check that tweet isn't already stored

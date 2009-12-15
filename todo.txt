@@ -2,3 +2,4 @@
 2- flickr template/styling
 3- open code new window?
 4- gist for code?
+5- Activity time to localtime
