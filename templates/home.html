@@ -23,3 +23,7 @@
 <h2 class="latest-activity">Latest Activity</h2>
 {% latest_activity %}
 {% endblock %}
+
+{% block extra_body %}
+<script type="text/javascript" src="{{ STATIC_URL }}js/rr.home.js"></script>
+{% endblock %}

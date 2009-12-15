@@ -1,0 +1,4 @@
+1- prettyprint.js
+2- flickr template/styling
+3- open code new window?
+4- gist for code?
