@@ -79,7 +79,7 @@ ul.navbar-one li { color: #999ca0; float:left; list-style: none; margin:0 0 0 20
 /* lifestream */
 h2.latest-activity { border-top: solid 2px #334455; padding:30px 0 0 0; }
 .lifestream { }
-.lifestream .post { border-bottom:solid 1px #f0f0f0; margin:10px; padding:0 65px 0 0; }
+.lifestream .post { border-bottom:solid 1px #f0f0f0; margin:10px 0; padding:0 65px 0 0; }
 .lifestream .post .datetime { color:#999; font-size:11px; font-weight:normal; text-decoration:underline; }
 .lifestream .github { background:transparent url(../imgs/logos/github.gif) no-repeat right 5px; }
 .lifestream .twitter { background:transparent url(../imgs/logos/twitter.gif) no-repeat right 5px; }
