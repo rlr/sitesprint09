@@ -42,7 +42,7 @@ pre.prettyprint { border: none; padding: .6em 0em .6em .6em; }
 .post, .bookmark, .quote { margin-bottom: 1.2em; }
 #comments{ border-top: solid 1px #CCC; margin-top: 1.8em; padding-top: .6em; }
 .list-tease { }
-.post .text { color:#666; font-style:italic; }
+.post .text-trunc { color:#666; font-style:italic; }
 .filter-title{ font-size: 1.4em; }
 .post-list .post, .post-list .quote, .post-list .bookmark {  padding-bottom: 1.2em; zoom:1; }
 .post-list .post:after, .post-list .quote:after, .post-list .bookmark:after{display:block;clear:both;visibility:hidden;content:'.';height:0;}
