@@ -18,9 +18,9 @@
 {% endcomment %}
 {% endblock %}
 {% compress css %}
-<link rel="stylesheet" href="{{ STATIC_URL }}css/pygments.css" type="text/css" media="all" charset="utf-8">
-<link rel="stylesheet" href="{{ STATIC_URL }}css/reset.css" type="text/css" media="all" charset="utf-8">
-<link rel="stylesheet" href="{{ STATIC_URL }}css/style.css" type="text/css" media="all" charset="utf-8">
+<link rel="stylesheet" href="{{ STATIC_URL }}css/pygments.css" type="text/css" media="all" />
+<link rel="stylesheet" href="{{ STATIC_URL }}css/reset.css" type="text/css" media="all" />
+<link rel="stylesheet" href="{{ STATIC_URL }}css/style.css" type="text/css" media="all" />
 {% endcompress %}
 {% disqus_dev %}
 {% block extra_head %}{% endblock %}
@@ -50,7 +50,7 @@
     </div>
     <div id="sd">
       <ul>
-      	<li><a href="{{ BLOG_SETTINGS.rss_url }}" title"Subscribe via RSS">Subscribe via RSS</a></li>
+      	<li><a href="{{ BLOG_SETTINGS.rss_url }}" title="Subscribe via RSS">Subscribe via RSS</a></li>
         <li><a href="{{ BLOG_SETTINGS.twitter_url }}" title="Follow me on Twitter">Follow me on Twitter</a></li>
       </ul>
 
@@ -110,11 +110,9 @@
   </div>
   {% endblock %}
   	  <div id="ft">
-	    <p>
 	      {% cache 3600 "base.footer" %}
 	      {% flatblock "footer" 3600 "flatblocks/bare.html" %}
 	      {% endcache %}
-	    </p>
 	  </div>
   </div>
 
