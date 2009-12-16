@@ -3,3 +3,5 @@
 3- open code new window?
 4- gist for code?
 5- Activity time to localtime
+6- switch to use django-pagination
+7- 
