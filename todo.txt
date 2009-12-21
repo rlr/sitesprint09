@@ -2,7 +2,5 @@
 2- flickr template/styling
 3- open code new window?
 4- gist for code?
-5- Activity time to localtime
-6- switch to use django-pagination
-7- style blockquote for blog and github activity
-8- migrate # of views/post from old site
+5- switch to use django-pagination
+6- style blockquote for blog and github activity
