@@ -19,7 +19,6 @@ def to_local(value):
     import pytz
     from lifestream.providers.utils import utc_to_local_datetime
     local = utc_to_local_datetime(value.replace(tzinfo=pytz.timezone('UTC'))).replace(tzinfo=None)
-    print str(value) + ' ' + str(local)
     return local
 
 
