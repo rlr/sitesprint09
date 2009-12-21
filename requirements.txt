@@ -33,5 +33,6 @@ httplib2==0.5.0
 -e git+git://github.com/montylounge/django-sugar.git#egg=sugar
 -e git+git://github.com/montylounge/django-quoteme.git#egg=quoteme
 
+pytz==2009r
 pymongo==1.1.2
 -e git+git://github.com/alex/django-templatetag-sugar#egg=template_sugar

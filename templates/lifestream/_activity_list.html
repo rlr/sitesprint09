@@ -4,7 +4,7 @@
 	<div class="post {{ object|ls_key:"lifestream:provider" }}">
 		{% timestampdate object as thedate %}
 		{% ifchanged thedate %}
-			<div class="date">{{ object|ls_key:"lifestream:timestamp"|date:"M d" }}</div>
+			<div class="date">{{ object|ls_key:"lifestream:timestamp"|to_local|date:"M d" }}</div>
 		{% endifchanged %}
 		{% ls_activity object %}
 	</div>

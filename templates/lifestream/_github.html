@@ -1,6 +1,6 @@
 {% load lifestream_tags %}
 <div class="text">
 <a href="{{ object.link }}">{{ object.title }}</a>
-<a href="{{ object.link }}" class="datetime">{{ object|ls_key:"lifestream:timestamp"|date:"g:iA"|lower }}</a><br />
+<a href="{{ object.link }}" class="datetime">{{ object|ls_key:"lifestream:timestamp"|to_local|date:"g:iA"|lower }}</a><br />
 {{ object.content|safe }}
 </div>

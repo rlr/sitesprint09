@@ -14,12 +14,22 @@ def ls_key(value, arg):
 def ls_date(value, arg):
     return value[arg].date
 
+@register.filter(name='to_local')
+def to_local(value):
+    import pytz
+    from lifestream.providers.utils import utc_to_local_datetime
+    local = utc_to_local_datetime(value.replace(tzinfo=pytz.timezone('UTC'))).replace(tzinfo=None)
+    print str(value) + ' ' + str(local)
+    return local
+
 
 @tag(register, [Variable(), Optional([Constant("as"), Name()])])
 def timestampdate(context, val, asvar=None):
-    date = val['lifestream:timestamp'].date()
+    import pytz
+    from lifestream.providers.utils import utc_to_local_datetime
+    date = val['lifestream:timestamp']
     if asvar:
-        context[asvar] = date
+        context[asvar] = utc_to_local_datetime(date.replace(tzinfo=pytz.timezone('UTC'))).date()
         return ""
     else:
         return date

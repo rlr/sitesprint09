@@ -31,5 +31,6 @@ httplib2==0.5.0
 -e hg+https://bitbucket.org/kmike/django-view-cache-utils/@tip#egg=django_view_cache_utils-tip
 -e hg+https://sorl-thumbnail.googlecode.com/hg/@tip#egg=sorl_thumbnail-tip
 
+pytz==2009r
 pymongo==1.1.2
 -e git+git://github.com/alex/django-templatetag-sugar#egg=template_sugar
