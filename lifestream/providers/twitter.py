@@ -27,7 +27,7 @@ def update():
     while True:
         more = _fetch_tweets(since_id, page)
         tweets += more
-        if len(more) < FETCH_COUNT:
+        if len(more) < 1:
             break
         else:
             page += 1
