@@ -8,10 +8,12 @@ h2, h3, h4, h5 { margin: 1em 0 0.2em; font-weight: bold; }
 h1, h2 { color:#334455; margin: 0.25em 0 .2em; font-size: 1.8em; letter-spacing: -0.025em; line-height: 1.2em; font-weight: 400; }
 h3 { font-size:18px; margin-bottom: 0.25em; }
 h4 { font-size:15px; }
-p, ul, ol, pre { font-size: 1em; margin: 0 0 0.6em; }
+p, ul, ol, pre, blockquote { font-size: 1em; margin: 0 0 10px; }
 ul, ol { margin-left: 2em; }
 ul ul { margin-bottom: 0; }
-p, li { line-height: 1.4em;}
+p, li, blockquote { line-height: 1.4em; }
+blockquote { background:#f0f0f0; margin:10px 0 10px 10px; padding:10px; }
+pre.prettyprint { background:#f0f0f0; }
 
 a:link, a:visited { color: #334455; font-weight: bold; text-decoration: none; }
 a:hover { color: #999; }
@@ -46,7 +48,7 @@ pre.prettyprint { border: none; padding: .6em 0em .6em .6em; }
 .filter-title{ font-size: 1.4em; }
 .post-list .post, .post-list .quote, .post-list .bookmark {  padding-bottom: 1.2em; zoom:1; }
 .post-list .post:after, .post-list .quote:after, .post-list .bookmark:after{display:block;clear:both;visibility:hidden;content:'.';height:0;}
-.post-detail .subscribe { margin-top: 1.2em; }
+
 .filter-title{ background-color: #ccc; margin-bottom: 1.2em; padding: .3em; }
 .post-img { }
 .post-img p { }
@@ -54,6 +56,22 @@ pre.prettyprint { border: none; padding: .6em 0em .6em .6em; }
 ul.recent-posts li, .post li { left-margin: 1.2em; list-style: disc; list-style-position: outside; }
 ul.recent-posts li { list-style-position:inside; }
 .bookmark p{ margin-top: .8em;}
+
+/* post tags */
+.post-detail div.tags ul { font-size:14px; margin:0; }
+.post-detail div.tags li { float:left; padding:0 5px 0 0; }
+.post-detail div.tags li a { background:#f0f0f0; border:solid 1px #334455; float:left; padding:1px 7px; }
+.post-detail div.tags li a:hover { background:#334455; color:#fff;}
+
+/* related posts */
+.post-detail div.related-posts { clear:both; padding:10px 0 0 0; }
+.post-detail div.related-posts li { font-size:14px; list-style:disc; }
+
+/* share */
+.post-detail div.share { margin-top: 10px; padding:0 0 10px 0; zoom:1; }
+.post-detail div.share:after{display:block;clear:both;visibility:hidden;content:'.';height:0;}
+.post-detail div.share ul{ font-size: 14px; margin:0; }
+.post-detail div.share li { float:left; list-style:disc; margin-left: 2.6em; }
 
 /* HEADER/NAV */
 #hd { border-bottom:1px solid #99a1aa; margin:0 0 30px 0; padding:0 0 15px 0; zoom:1; }
@@ -68,10 +86,7 @@ ul.recent-posts li { list-style-position:inside; }
 ul.navbar-one li { color: #999ca0; float:left; list-style: none; margin:0 0 0 20px; text-decoration: none; }
 #nav form { clear:both; padding:15px 0 0 0; }
 .button{ margin-left: .6em;}
-.subscribe { zoom:1; }
-.subscribe:after{display:block;clear:both;visibility:hidden;content:'.';height:0;}
-.subscribe ul{ font-size: .9em; }
-.subscribe li { float:left; list-style: square; margin-left: 2.6em; }
+
 
 #ft{ border-top:1px solid #99a1aa; clear:both; color:#555; font-size:13px; margin:20px 0 0 0; padding:22px 0 0 0; width:960px; }
 #ft p{ }
@@ -79,14 +94,14 @@ ul.navbar-one li { color: #999ca0; float:left; list-style: none; margin:0 0 0 20
 /* lifestream */
 h2.latest-activity { border-top: solid 2px #334455; padding:30px 0 0 0; }
 .lifestream { }
-.lifestream .post { border-bottom:solid 1px #f0f0f0; margin:10px 0; padding:0 65px 0 0; }
+.lifestream .post { border-bottom:solid 1px #f0f0f0; margin:0; padding:10px 65px 10px 0; }
 .lifestream .post .datetime { color:#999; font-size:11px; font-weight:normal; text-decoration:underline; }
-.lifestream .github { background:transparent url(../imgs/logos/github.gif) no-repeat right 5px; }
-.lifestream .twitter { background:transparent url(../imgs/logos/twitter.gif) no-repeat right 5px; }
+.lifestream .github { background:transparent url(../imgs/logos/github.gif) no-repeat right 15px; }
+.lifestream .twitter { background:transparent url(../imgs/logos/twitter.gif) no-repeat right 15px; }
 .lifestream .twitter span.meta { white-space:nowrap; }
 .lifestream .twitter a { }
 .lifestream .twitter a.in-reply-to { font-weight:normal; font-size:11px; text-decoration:underline; }
-.lifestream .delicious { background:transparent url(../imgs/logos/delicious.gif) no-repeat 500px 0px; }
+.lifestream .delicious { background:transparent url(../imgs/logos/delicious.gif) no-repeat 500px 10px; }
 
 /***********************************************
  * forms
