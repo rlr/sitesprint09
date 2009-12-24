@@ -7,6 +7,7 @@ from django import http
 from django.template import loader, Context
 from django_proxy.models import Proxy
 from django.views.generic import list_detail
+from django.views.decorators.cache import cache_page
 from basic.blog.models import Settings
 from view_cache_utils import cache_page_with_prefix
 from contact_form.views import contact_form as django_contact_form
@@ -36,6 +37,7 @@ def post_result_item(post):
         'text': post.body,
         }
 
+@cache_page(300)
 def home(request, template='home.html'):
     """
     home page

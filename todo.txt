@@ -3,4 +3,3 @@
 3- open code new window?
 4- gist for code?
 5- switch to use django-pagination
-6- style blockquote for blog and github activity
