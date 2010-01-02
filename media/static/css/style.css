@@ -102,6 +102,7 @@ h2.latest-activity { border-top: solid 2px #334455; padding:30px 0 0 0; }
 .lifestream .twitter a { }
 .lifestream .twitter a.in-reply-to { font-weight:normal; font-size:11px; text-decoration:underline; }
 .lifestream .delicious { background:transparent url(../imgs/logos/delicious.gif) no-repeat 500px 10px; }
+.lifestream .flickr { background:transparent url(../imgs/logos/flickr.gif) no-repeat right 15px; }
 
 /***********************************************
  * forms
