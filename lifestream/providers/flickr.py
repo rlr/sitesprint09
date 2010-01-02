@@ -54,7 +54,7 @@ def _save_pic(photo):
     # save to db
     photo["lifestream:provider"] = "flickr"
     photo["lifestream:source"] = src
-    photo["lifestream:timestamp"] = utils.parsedateutc(photo["datetaken"])
+    photo["lifestream:timestamp"] = utils.parsedate(photo["datetaken"])
     photo["lifestream:added"] = datetime.utcnow()
     
     collection.insert(photo)
