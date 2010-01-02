@@ -71,7 +71,7 @@ def safeint(s):
  
 LIFESTREAM_ADJUST_DATETIME = True
 if hasattr(settings,'LIFESTREAM_ADJUST_DATETIME'):
-    LIFESTREAM_ADJUST_DATETIME = settings.JELLYROLL_ADJUST_DATETIME
+    LIFESTREAM_ADJUST_DATETIME = settings.LIFESTREAM_ADJUST_DATETIME
  
 if LIFESTREAM_ADJUST_DATETIME:
     try:
@@ -94,6 +94,9 @@ if LIFESTREAM_ADJUST_DATETIME:
         """
         return dt.astimezone(LOCAL)
  
+    def local_to_utc_datetime(dt):
+        return dt.replace(tzinfo=dateutil.tz.tzlocal()).astimezone(dateutil.tz.tzutc()).replace(tzinfo=None)
+        
     def utc_to_local_timestamp(ts, orig_tz=UTC):
         """
         Convert a timestamp object into a tz-aware datetime object.
