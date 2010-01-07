@@ -24,7 +24,7 @@ def getxml(url, **kwargs):
 def getjson(url, **kwargs):
     """Fetch and parse some JSON. Returns the deserialized JSON."""
     json = fetch_resource(url, **kwargs)
-    return simplejson.loads(json)
+    return simplejson.loads(json or '{}')
  
 def fetch_resource(url, method="GET", body=None, username=None, password=None, headers=None):
     h = httplib2.Http(timeout=15)
@@ -37,6 +37,10 @@ def fetch_resource(url, method="GET", body=None, username=None, password=None, h
         headers = DEFAULT_HTTP_HEADERS.copy()
     
     response, content = h.request(url, method, body, headers)
+    
+    if response.status != 200:
+        content = ''
+
     return content
     
 #
