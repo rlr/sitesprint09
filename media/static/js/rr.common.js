@@ -8,7 +8,7 @@ var ify = function() {
   return {
     "link": function(t) {
       return t.replace(/(^|\s+)(https*\:\/\/\S+[^\.\s+])/g, function(m, m1, link) {
-        return m1 + '<a href=' + link + '>' + ((link.length > 25) ? link.substr(0, 24) + '...' : link) + '</a>';
+        return m1 + '<a href="' + link + '">' + ((link.length > 25) ? link.substr(0, 24) + '...' : link) + '</a>';
       });
     },
     "at": function(t) {
