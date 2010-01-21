@@ -27,6 +27,7 @@ pre.prettyprint { border: none; padding: .6em 0em .6em .6em; }
  * template
  */
 #bleeder { background:#334455; bottom: 0; height: 100%; position: fixed; opacity:0.25;filter:alpha(opacity=25); top: 0; width: 10px; z-index: 9999; }
+*html #bleeder { display:none; }
 #pg { margin:0 0 0 80px; width:960px; }
 #bd { zoom:1; }
 #hd:after, #bd:after{display:block;clear:both;visibility:hidden;content:'.';height:0;}
@@ -75,7 +76,7 @@ ul.recent-posts li { list-style-position:inside; }
 
 /* HEADER/NAV */
 #hd { border-bottom:1px solid #99a1aa; margin:0 0 30px 0; padding:0 0 15px 0; zoom:1; }
-#logo { float:left; font-family:Georgia; font-size:36px; padding:25px 0 0 0; }
+#logo { float:left; font-family:Georgia; font-size:36px; padding:25px 0; }
 #logo a:link, #logo a:hover, #logo a:visited { color:#345; }
 #logo span.first { font-weight:bold; }
 #logo span.last { font-weight:normal; opacity:0.5;filter:alpha(opacity=50); }
