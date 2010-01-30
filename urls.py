@@ -68,11 +68,12 @@ urlpatterns += patterns('',
     url(r'^tags/(?P<slug>[-\w]+)/$', 'rr.core.views.tag_detail',
             name='blog_tag_detail'),
 
-    url (r'^search/$',
+    url(r'^search/$',
         view=proxy_search,
         name='proxy_search'),
 
-    (r'^blog/', include('basic.blog.urls')),
+    url(r'^/blog/creating-an-rss-feed-in-aspnet-mvc/', 'django.views.generic.simple.redirect_to', {'url': '/blog/creating-an-rss-feed-in-asp-net-mvc/'}),
+    url(r'^blog/', include('basic.blog.urls')),
 )
 
 
