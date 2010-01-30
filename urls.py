@@ -72,7 +72,7 @@ urlpatterns += patterns('',
         view=proxy_search,
         name='proxy_search'),
 
-    url(r'^/blog/creating-an-rss-feed-in-aspnet-mvc/', 'django.views.generic.simple.redirect_to', {'url': '/blog/creating-an-rss-feed-in-asp-net-mvc/'}),
+    url(r'^blog/creating-an-rss-feed-in-aspnet-mvc/', 'django.views.generic.simple.redirect_to', {'url': '/blog/creating-an-rss-feed-in-asp-net-mvc/'}),
     url(r'^blog/', include('basic.blog.urls')),
 )
 
